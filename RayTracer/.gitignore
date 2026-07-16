@@ -1,0 +1,14 @@
+plugins
+*.so
+.vscode/
+*.o
+*.ppm
+raytracer
+build
+RAYTRACER_DETAILED_REPORT.md
+*.png
+DeLorean/
+*.mtl
+*.obj
+*.cfg
+scenes/

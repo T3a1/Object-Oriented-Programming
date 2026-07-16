@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360">
+  <style>
+    .box { fill:#f8fafc; stroke:#0b4a6f; stroke-width:2 }
+    .title { font: 13px/1 "Segoe UI", Roboto, Arial; fill:#072a40; font-weight:700 }
+    .small { font: 12px/1 "Segoe UI", Roboto, Arial; fill:#0b1724 }
+    .arrow { stroke:#0b4a6f; stroke-width:2; fill:none; marker-end:url(#a) }
+  </style>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0b4a6f" />
+    </marker>
+  </defs>
+
+  <!-- Left-to-right flow -->
+  <g transform="translate(40,40)">
+    <rect x="0" y="0" width="200" height="80" rx="8" class="box" />
+    <text x="18" y="28" class="title">1. Start</text>
+    <text x="18" y="48" class="small">User runs ./raytracer scenes/scene.cfg</text>
+
+    <rect x="260" y="0" width="220" height="80" rx="8" class="box" />
+    <text x="282" y="28" class="title">2. Plugin load</text>
+    <text x="282" y="48" class="small">DLloader loads libprimitives.so</text>
+
+    <rect x="560" y="0" width="220" height="80" rx="8" class="box" />
+    <text x="582" y="28" class="title">3. Parse scene</text>
+    <text x="582" y="48" class="small">LibConfigSceneBuilder parses .cfg</text>
+
+    <rect x="860" y="0" width="220" height="80" rx="8" class="box" />
+    <text x="882" y="28" class="title">4. Build scene</text>
+    <text x="882" y="48" class="small">SceneDirector assembles and builds BVH</text>
+
+    <rect x="1160" y="0" width="0" height="0" rx="8" class="box" style="display:none" />
+
+    <!-- arrows -->
+    <path class="arrow" d="M200 40 L260 40" />
+    <path class="arrow" d="M480 40 L560 40" />
+    <path class="arrow" d="M780 40 L860 40" />
+
+    <!-- Render step below -->
+    <rect x="430" y="140" width="340" height="80" rx="8" class="box" />
+    <text x="450" y="168" class="title">5. Render</text>
+    <text x="450" y="188" class="small">Scene.render() → preview.ppm / output.ppm</text>
+
+    <path class="arrow" d="M970 40 L970 140" />
+    <path class="arrow" d="M500 220 L500 260" opacity="0" />
+
+    <!-- Side notes: Factories & FileWatcher -->
+    <rect x="0" y="140" width="200" height="80" rx="8" class="box" />
+    <text x="18" y="168" class="title">Factories</text>
+    <text x="18" y="188" class="small">ShapeFactory, LightFactory</text>
+
+    <rect x="920" y="140" width="250" height="80" rx="8" class="box" />
+    <text x="940" y="168" class="title">FileWatcher</text>
+    <text x="940" y="188" class="small">Watches scene file and triggers re-render</text>
+
+    <path class="arrow" d="M220 160 L430 160" />
+    <path class="arrow" d="M760 160 L920 160" />
+    <path class="arrow" d="M1110 160 L1110 80" />
+    <path class="arrow" d="M1110 80 L1010 80" />
+  </g>
+</svg>

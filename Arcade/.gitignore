@@ -1,0 +1,12 @@
+flake.lock
+*.o
+build
+vgcore*
+latex
+.vscode
+arcade.sublime-workspace
+arcade.sublime-project
+lib
+arcade
+save
+html
